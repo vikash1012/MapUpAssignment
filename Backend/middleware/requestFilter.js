@@ -6,6 +6,9 @@ function requestFilter(req,res,next){
         return res.status(401).json({errorMessage:"Unauthorize Request"})
 
     }
+    if(req.body.coordinates==undefined||req.body.coordinates.length<2){
+        return res.status(400).json({errorMessage:"Bad Request"})
+    }
     next();
 }
 module.exports=requestFilter;
