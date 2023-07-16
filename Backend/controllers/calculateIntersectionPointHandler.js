@@ -5,7 +5,6 @@ const findIntersectionOfTwolineSegment=require("../utilities/IntersectionOfTwoSe
 function calculateIntersectionPoint(req,res){
 let longline=req.body.coordinates;
 let intersectingLine=[];
-
 for(let i=0;i<randomline.length;i++){
 
     let id=(i+1)<=9?"0"+(i+1):(i+1);
@@ -31,7 +30,6 @@ for(let i=0;i<randomline.length;i++){
         intersectingLine.push(intersectingPoint);
     }
 }
-
 res.send(intersectingLine);  
 }
 
