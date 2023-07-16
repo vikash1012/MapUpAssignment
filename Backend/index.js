@@ -3,6 +3,9 @@ const app=express();
 const intersectionRouter=require("./routes/intersection");
 const port=8080;
 
+//middleware
+app.use(express.json());
+
 // Routes
 app.use("/intersection", intersectionRouter);
 
