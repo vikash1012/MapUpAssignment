@@ -1,7 +1,7 @@
 const randomline=require("../Data/line.json")
 const findIntersectionOfTwolineSegment=require("../utilities/IntersectionOfTwoSegment.js");
 
-// this is call back funcion that return intersecting line(LineId alog with intersecting point)
+// this is call back funcion that return intersecting line(LineId alog with intersecting point) using constructive algorithm
 function calculateIntersectionPoint(req,res){
 let longline=req.body.coordinates;
 let intersectingLine=[];
@@ -9,7 +9,6 @@ for(let i=0;i<randomline.length;i++){
 
     let id=(i+1)<=9?"0"+(i+1):(i+1);
     let pointofIntersection=[];
-
     for(let j=0;j<longline.length-1;j++){
         line1=[];
         line1.push(longline[j]);
