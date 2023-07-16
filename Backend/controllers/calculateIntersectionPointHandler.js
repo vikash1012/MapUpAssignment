@@ -34,6 +34,9 @@ function calculateIntersectionPoint (req, res) {
       intersectingLine.push(intersectingPoint)
     }
   }
+  const statusCode = 200
+  res.status(statusCode)
+  console.log('HTTP Status Code:', res.statusCode)
   res.send(intersectingLine)
 }
 
