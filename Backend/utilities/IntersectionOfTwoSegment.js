@@ -7,7 +7,7 @@ function findIntersectionOfTwolineSegment (line1, line2) {
     return intersectingPoint
   }
   const point = findIntersection(slope1, slope2, line1[0], line2[0])
-  if (isPointWithinLineSegment(point, line1)) {
+  if (isPointWithinLineSegment(point, line1, line2)) {
     intersectingPoint.push(point[0])
     intersectingPoint.push(point[1])
   }
@@ -37,13 +37,17 @@ function findIntersection (slope1, slope2, point1, point2) {
   return [intersectionX, intersectionY]
 }
 // this function check whether a point is within line segment or not
-function isPointWithinLineSegment (point, line) {
-  const minX = Math.min(line[0][0], line[1][0])
-  const maxX = Math.max(line[0][0], line[1][0])
-  const minY = Math.min(line[0][1], line[1][1])
-  const maxY = Math.max(line[0][1], line[1][1])
+function isPointWithinLineSegment (point, line1, line2) {
+  const minX1 = Math.min(line1[0][0], line1[1][0])
+  const maxX1 = Math.max(line1[0][0], line1[1][0])
+  const minY1 = Math.min(line1[0][1], line1[1][1])
+  const maxY1 = Math.max(line1[0][1], line1[1][1])
+  const minX2 = Math.min(line2[0][0], line2[1][0])
+  const maxX2 = Math.max(line2[0][0], line2[1][0])
+  const minY2 = Math.min(line2[0][1], line2[1][1])
+  const maxY2 = Math.max(line2[0][1], line2[1][1])
 
-  if (point[0] >= minX && point[0] <= maxX && point[1] >= minY && point[1] <= maxY) {
+  if (point[0] >= minX1 && point[0] <= maxX1 && point[1] >= minY1 && point[1] <= maxY1 && point[0] >= minX2 && point[0] <= maxX2 && point[1] >= minY2 && point[1] <= maxY2) {
     return true
   }
   return false

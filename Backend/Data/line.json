@@ -382,7 +382,7 @@
           "type": "LineString",
           "coordinates": [
             [-6, 2],
-            [16, 2]
+            [-7, 2]
           ]
         }
       }
